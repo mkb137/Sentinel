@@ -120,12 +120,12 @@ namespace Sentinel.Highlighters
         {
             Debug.Assert(!Highlighters.Any(), "Should not have any contents at initialisation");            
 
-            Highlighters.Add(new StandardHighlighter("Trace", true, LogEntryField.Type, MatchMode.Exact, "TRACE", new HighlighterStyle { Background = Colors.LightGray }) as T);
-            Highlighters.Add(new StandardHighlighter("Debug", true, LogEntryField.Type,MatchMode.Exact,"DEBUG",new HighlighterStyle { Background = Colors.LightGreen }) as T);
-            Highlighters.Add(new StandardHighlighter("Info", true, LogEntryField.Type, MatchMode.Exact, "INFO", new HighlighterStyle { Foreground = Colors.White, Background = Colors.Blue }) as T);
-            Highlighters.Add(new StandardHighlighter("Warn", true, LogEntryField.Type, MatchMode.Exact, "WARN", new HighlighterStyle { Background = Colors.Yellow }) as T);
-            Highlighters.Add(new StandardHighlighter("Error", true, LogEntryField.Type, MatchMode.Exact, "ERROR", new HighlighterStyle { Foreground = Colors.White, Background = Colors.Red }) as T);
-            Highlighters.Add(new StandardHighlighter("Fatal", true, LogEntryField.Type, MatchMode.Exact, "FATAL", new HighlighterStyle { Foreground = Colors.Yellow, Background = Colors.Black }) as T);
+            Highlighters.Add(new StandardHighlighter("Trace", false, LogEntryField.Type, MatchMode.Exact, "TRACE", new HighlighterStyle { Background = Colors.LightGray }) as T);
+            Highlighters.Add(new StandardHighlighter("Debug", false, LogEntryField.Type,MatchMode.Exact,"DEBUG",new HighlighterStyle { Background = Colors.LightGreen }) as T);
+            Highlighters.Add(new StandardHighlighter("Info", false, LogEntryField.Type, MatchMode.Exact, "INFO", new HighlighterStyle { Foreground = Colors.White, Background = Colors.Blue }) as T);
+            Highlighters.Add(new StandardHighlighter("Warn", false, LogEntryField.Type, MatchMode.Exact, "WARN", new HighlighterStyle { Background = Colors.Yellow }) as T);
+            Highlighters.Add(new StandardHighlighter("Error", false, LogEntryField.Type, MatchMode.Exact, "ERROR", new HighlighterStyle { Foreground = Colors.White, Background = Colors.Red }) as T);
+            Highlighters.Add(new StandardHighlighter("Fatal", false, LogEntryField.Type, MatchMode.Exact, "FATAL", new HighlighterStyle { Foreground = Colors.Yellow, Background = Colors.Black }) as T);
         }
 
         private void AddHighlighter(object obj)
