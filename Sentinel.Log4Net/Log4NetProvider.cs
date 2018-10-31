@@ -31,7 +31,7 @@
 
         private readonly IUdpAppenderListenerSettings udpSettings;
 
-        private readonly XNamespace log4Net = "unique";
+        private readonly XNamespace log4Net = "log4net";//"unique";
 
         private CancellationTokenSource cancellationTokenSource;
 
