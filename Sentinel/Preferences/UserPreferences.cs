@@ -46,7 +46,7 @@ namespace Sentinel.Preferences
 
         private bool show;
 
-        private bool showThreadColumn;
+        private bool showThreadColumn = true;
 
         private bool showExceptionColumn;
 
