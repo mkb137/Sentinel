@@ -31,7 +31,7 @@
 
         private readonly IUdpAppenderListenerSettings udpSettings;
 
-        private readonly XNamespace log4Net = "log4net";//"unique";
+        private readonly XNamespace log4Net = "http://logging.apache.org/log4net/schemas/log4net-events-1.2/";//"unique";
 
         private CancellationTokenSource cancellationTokenSource;
 
