@@ -226,10 +226,10 @@
             
             try
             {
-                var payload = string.Format(@"<entry xmlns:log4net=""{0}"">{1}</entry>", log4Net, message);
-                var element = XElement.Parse(payload);
-                var entryEvent = element.Element(log4Net + "event");
-
+//                var payload = string.Format(@"<entry xmlns:log4net=""{0}"">{1}</entry>", log4Net, message);
+//                var element = XElement.Parse(payload);
+//                var entryEvent = element.Element(log4Net + "event");
+				var entryEvent = XElement.Parse(message);
                 // Establish whether a sub-system seems to be defined.
                 if (entryEvent != null)
                 {
