@@ -239,26 +239,28 @@
                     var system = entryEvent.GetAttribute("logger", string.Empty);
                     var type = entryEvent.GetAttribute("level", string.Empty);
                     var host = string.Empty;
+					var properties =  entryEvent.Element(log4Net + "properties");
+					if ( null != properties ) {
+						foreach (var propertyElement in properties.Elements())
+						{
+							if (propertyElement.Name == log4Net + "data")
+							{
+								var name = propertyElement.GetAttribute("name", string.Empty);
+								var value = propertyElement.GetAttribute("value", string.Empty);
 
-                    foreach (var propertyElement in entryEvent.Element(log4Net + "properties").Elements())
-                    {
-                        if (propertyElement.Name == log4Net + "data")
-                        {
-                            var name = propertyElement.GetAttribute("name", string.Empty);
-                            var value = propertyElement.GetAttribute("value", string.Empty);
-
-                            switch (name)
-                            {
-                                case "log4net:HostName":
-                                    host = value;
-                                    break;
-                                default:
-                                    Log.WarnFormat("Found unknown property named '{0}' with value '{1}'", name, value);
-                                    break;
-                            }
-                        }
-                    }
-
+								switch (name)
+								{
+									case "log4net:HostName":
+										host = value;
+										break;
+									default:
+										Log.WarnFormat("Found unknown property named '{0}' with value '{1}'", name, value);
+										break;
+								}
+							}
+						}
+					}
+	
                     var metaData = new Dictionary<string, object>();
                     metaData["Classification"] = classification;
                     metaData["Host"] = host;
